@@ -25,17 +25,20 @@
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 const page_elements = require('../fixtures/pageElements.json')
 
-
 Cypress.Commands.add('signIn', ({ email, password }) => {
-  if(email) cy.get(page_elements.inputs.email).type(email);
-  if(password) cy.get(page_elements.inputs.password).type(password);
-  cy.get(page_elements.buttons.login).click();
-});
+  if (email) cy.get(page_elements.inputs.email).type(email)
+  if (password) cy.get(page_elements.inputs.password).type(password)
+  cy.get(page_elements.buttons.login).click()
+})
 
-Cypress.Commands.add('register', ({ fullname, email, password, confirmPassword }) => {
-  if(fullname) cy.get(page_elements.inputs.name).type(fullname);
-  if(email) cy.get(page_elements.inputs.email).type(email);
-  if(password) cy.get(page_elements.inputs.password).type(password);
-  if(confirmPassword) cy.get(page_elements.inputs.passwordConfirmation).type(confirmPassword);
-  cy.get(page_elements.buttons.register).click();
-});
+Cypress.Commands.add(
+  'register',
+  ({ fullname, email, password, confirmPassword }) => {
+    if (fullname) cy.get(page_elements.inputs.name).type(fullname)
+    if (email) cy.get(page_elements.inputs.email).type(email)
+    if (password) cy.get(page_elements.inputs.password).type(password)
+    if (confirmPassword)
+      cy.get(page_elements.inputs.passwordConfirmation).type(confirmPassword)
+    cy.get(page_elements.buttons.register).click()
+  }
+)

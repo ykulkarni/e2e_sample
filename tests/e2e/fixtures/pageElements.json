@@ -1,18 +1,18 @@
 {
-      "inputs" : {
-      "name": "[data-cy='input-full-name']",
-      "email": "[data-cy='input-email']",
-      "password": "[data-cy='input-password']",
-      "passwordConfirmation": "[data-cy='input-password-confirmation']"
-    },
-    "buttons": {
-      "register": "[data-cy='button-register']",
-      "login": "[data-cy='button-login']"
-    },
-    "text": {
-      "error": "[data-cy='text-error']",
-      "success": "[data-cy='text-success']",
-      "login": "[data-cy='text-login']",
-      "register": "[data-cy='text-register']"
-    }
+  "inputs": {
+    "name": "[data-cy='input-full-name']",
+    "email": "[data-cy='input-email']",
+    "password": "[data-cy='input-password']",
+    "passwordConfirmation": "[data-cy='input-password-confirmation']"
+  },
+  "buttons": {
+    "register": "[data-cy='button-register']",
+    "login": "[data-cy='button-login']"
+  },
+  "text": {
+    "error": "[data-cy='text-error']",
+    "success": "[data-cy='text-success']",
+    "login": "[data-cy='text-login']",
+    "register": "[data-cy='text-register']"
   }
+}

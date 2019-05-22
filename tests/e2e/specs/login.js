@@ -20,44 +20,51 @@ describe('The login page', () => {
   })
 
   it('Should login with correct Password and Email', () => {
-    cy.signIn({email: 'super@secret.com', password: '1234567890'})
+    cy.signIn({ email: 'super@secret.com', password: '1234567890' })
+    // Assert you are logged in successfully
     cy.get(page_elements.text.success)
-    .should('exist')
-    .should('contain', messages.LOGIN_SUCCESS)
+      .should('exist')
+      .should('contain', messages.LOGIN_SUCCESS)
   })
 
-  context('Login Failure',() => {
-    it('Incorrect Password', () => {
-      cy.signIn({email: 'super@secret.com', password: '!234567890'})
+  context('Login Failure', () => {
+    it('When incorrect Password', () => {
+      cy.signIn({ email: 'super@secret.com', password: '!234567890' })
+      // Assert you get login failure - Invalid email or password
       cy.get(page_elements.text.error)
         .should('exist')
         .should('contain', messages.LOGIN_FAILED)
     })
 
-    it('Incorrect email', () => {
-      cy.signIn({email: 'super123@secret.com', password: '1234567890'})
+    it('When incorrect email', () => {
+      cy.signIn({ email: 'super123@secret.com', password: '1234567890' })
+      // Assert you get login failure - Invalid email or password
       cy.get(page_elements.text.error)
         .should('exist')
         .should('contain', messages.LOGIN_FAILED)
     })
 
-    it('Email Empty', () => {
-      cy.signIn({ password: '!234567890'})
+    it('When email Empty', () => {
+      cy.signIn({ password: '!234567890' })
+      // Assert you get login failure - Invalid email format
       cy.get(page_elements.text.error)
         .should('exist')
         .should('contain', messages.INVALID_EMAIL_FORMAT)
     })
 
-    it('Password Empty', () => {
-      cy.signIn({ email: 'super123@secret.com'})
+    it('When password Empty', () => {
+      cy.signIn({ email: 'super123@secret.com' })
+      // Assert you get login failure - Must Provide a Passord
       cy.get(page_elements.text.error)
         .should('exist')
         .should('contain', messages.PASSWORD_EMPTY)
-      })
+    })
   })
 
-  it('It should take you to Register page when you click register link', () => {
-    cy.get(page_elements.text.register).children('a').click()
-    cy.url().should('include','/register')
+  it('Should take you to Register page when you click register link', () => {
+    cy.get(page_elements.text.register)
+      .children('a')
+      .click()
+    cy.url().should('include', '/register')
   })
 })
