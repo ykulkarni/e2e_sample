@@ -1,0 +1,11 @@
+{
+    "FULL_NAME_NOT_EMPTY" : "Full name is required",
+    "INVALID_EMAIL_FORMAT" : "Invalid email format",
+    "PASSWORD_LENGTH":"Password must be greater than 8 characters",
+    "PASSWORD_DONT_MATCH":"Password confirmation does not match password",
+    "PASSWORD_EMPTY": "Must provide a password",
+    "LOGIN_FAILED":"Invalid email or password",
+    "REGISTER_SUCCESS": "You have successfully registered! Our developers are hard at work implementing the rest of the features.",
+    "LOGIN_SUCCESS":"You have been successfully logged in! Our developers are hard at work implementing the rest of the features."
+  }
+  
